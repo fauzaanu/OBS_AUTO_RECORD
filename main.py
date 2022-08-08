@@ -9,10 +9,10 @@ def isitrunning(names):
     for process in process_iter():
         processlist.append(process.name().casefold())
 
-    # print(processlist)
+
     for name in names:
         status[name] = "inactive"
-        # print(name.casefold())
+
 
         for procesx in processlist:
             if str(name.casefold()) in procesx:
@@ -37,6 +37,8 @@ def recheck(old_status):
         for process in process_iter():
             if "obs64" in str(process.name()).casefold():
                 print("Killing OBS")
+
+                # killing obs may lose some recording... use webscoket?
                 process.kill()
 
     return old_status
@@ -44,8 +46,7 @@ def recheck(old_status):
 
 if __name__ == "__main__":
 
-    # When illustrator is running but OBS is not start OBS and start recording
-    # OBS should be recording mkv so when we force close it the files still will be saved
+
     current_status = dict()
     old_status = dict()
     current_status = isitrunning(["illustrator", "obs64"])
