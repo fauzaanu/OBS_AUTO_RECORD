@@ -8,5 +8,5 @@ Script is meant to be running continousely from system startup
 - setup shortcuts to stop recording 
 
 ## TODO
-- [ ] TODO: Add pyautogui and send the hotkey
-- [ ] TODO: Change structure to add more programs instead of 1
+- [ ]  ~~Add pyautogui and send the hotkey~~ : HOTKEYS NOT WORKING
+- [x] Change structure to add more programs instead of 1
