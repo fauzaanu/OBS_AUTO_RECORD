@@ -4,10 +4,10 @@ from obs_auto_rec import Recorder
 if __name__ == "__main__":
     while 1 == 1:
         # monitor illustrator
-        Recorder(monitor_application="illustrator", scene="AI", recheck_delay=3)
+        Recorder(monitor_application="illustrator", scene="FS", recheck_delay=3)
 
         # monitor photoshop
-        Recorder(monitor_application="photoshop", scene="PS", recheck_delay=3),
+        Recorder(monitor_application="photoshop", scene="FS", recheck_delay=3),
 
         # add more as you wish
 

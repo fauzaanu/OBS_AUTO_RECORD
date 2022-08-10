@@ -1,6 +1,8 @@
 # only the class
 # from obs_auto_rec import Recorder
 
+# done: OBS should not be closed if the script did not open it
+
 from psutil import process_iter
 from subprocess import Popen
 import time
@@ -15,6 +17,7 @@ class Recorder:
         self.inactivity_delay = recheck_delay
 
         self.break_next = False
+        self.we_opened_obs = False
 
         current_status = dict()
 
@@ -27,7 +30,6 @@ class Recorder:
     def isitrunning(self, names):
         processlist = []
         status = {}
-
 
         for process in process_iter():
             processlist.append(process.name().casefold())
@@ -57,6 +59,7 @@ class Recorder:
 
     def open_obs(self, scene_name):
         print("Opening OBS")
+        self.we_opened_obs = True
         x = Popen(['C:\\Program Files\\obs-studio\\bin\\64bit\\obs64.exe', '--startrecording', '--minimize-to-tray',
                    f'--scene {scene_name}'],
                   cwd="C:\\Program Files\\obs-studio\\bin\\64bit\\", )
@@ -80,7 +83,6 @@ class Recorder:
             "obs64"] == "active":
             for process in process_iter():
                 if "obs64" in str(process.name()).casefold():
-                    self.obs_kill_safe(process)
+                    if self.we_opened_obs:
+                        self.obs_kill_safe(process)
         return current_status
-
-
