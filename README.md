@@ -22,6 +22,7 @@ if __name__ == "__main__":
         Recorder(monitor_application="illustrator", scene="FS", recheck_delay=3)
 ```
 
+
 `monitor_application="illustrator"` : Should be the name you see on Windows task
 manager. It is not necessary to keep full name.
 
