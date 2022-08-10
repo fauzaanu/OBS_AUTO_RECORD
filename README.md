@@ -1,6 +1,5 @@
 # OBS AUTO RECORD
-Script to start OBS Recording when a certain program is running. And to exit when that program exits. Hardcoded for illustrator.
-
+Script to start OBS Recording when a certain program is running. And to exit when that program exits.
 Script is meant to be running continousely from system startup
 
 ## Important
