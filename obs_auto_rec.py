@@ -1,3 +1,6 @@
+# only the class
+# from obs_auto_rec import Recorder
+
 from psutil import process_iter
 from subprocess import Popen
 import time
